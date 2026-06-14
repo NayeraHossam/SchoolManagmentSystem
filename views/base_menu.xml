@@ -1,0 +1,22 @@
+<odoo>
+    <menuitem
+            id="school_system"
+            name="School System"
+    />
+    <menuitem
+            id="student_profile_menu"
+            name="Student Profile"
+            parent="school_system"
+    />
+    <menuitem
+            id="courses_menu"
+            name="Courses"
+            parent="school_system"
+    />
+    <menuitem
+            id="course_registration_menu"
+            name="Course Registration"
+            parent="school_system"
+    />
+
+</odoo>

@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+     <record id="course_registration_view_tree" model="ir.ui.view">
+            <field name="name">course.registration.tree</field>
+        <field name="model">course.registration</field>
+        <field name="arch" type="xml">
+                <tree>
+                    <field name="student_id"/>
+                    <field name="course_id"/>
+                    <field name="course_hour"/>
+                </tree>
+        </field>
+        </record>
+
+    <record id="course_registration_view_form" model="ir.ui.view">
+            <field name="name">course.registration.form</field>
+        <field name="model">course.registration</field>
+        <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="course_id"/>
+                        <field name="course_num"/>
+                        <field name="course_hour"/>
+                        <field name="student_id"/>
+                        <field name="studentid"/>
+                    </group>
+                    
+                </form>
+        </field>
+        </record>
+    </data>
+    <record id="course_registration_action" model="ir.actions.act_window">
+        <field name="name">Course Registration</field>
+        <field name="res_model">course.registration</field>
+    </record>
+
+    <menuitem
+            id="course_registration_item"
+            name="Course Registration"
+            parent="course_registration_menu"
+            action="course_registration_action"
+    />
+</odoo>

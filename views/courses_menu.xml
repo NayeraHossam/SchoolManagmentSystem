@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+     <record id="courses_view_tree" model="ir.ui.view">
+            <field name="name">courses.tree</field>
+        <field name="model">courses</field>
+        <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="course_id"/>
+                    <field name="credit_hours"/>
+                </tree>
+        </field>
+        </record>
+
+    <record id="courses_view_form" model="ir.ui.view">
+            <field name="name">courses.form</field>
+        <field name="model">courses</field>
+        <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"/>
+                        <field name="course_id"/>
+                        <field name="credit_hours"/>
+                        <field name="time"/>
+                    </group>
+                    <group>
+                        <field name="grade_ids">
+                            <tree editable="bottom">
+                                <field name="student_id"/>
+                                <field name="percentage"/>
+                            </tree>
+                        </field>
+                    </group>
+                    
+                </form>
+        </field>
+        </record>
+    </data>
+    <record id="courses_action" model="ir.actions.act_window">
+        <field name="name">Courses</field>
+        <field name="res_model">courses</field>
+    </record>
+
+    <menuitem
+            id="courses_item"
+            name="Courses"
+            parent="courses_menu"
+            action="courses_action"
+    />
+</odoo>
