@@ -1,35 +1,35 @@
 <odoo>
     <data>
-     <record id="student_profile_view_tree" model="ir.ui.view">
-            <field name="name">student.profile.tree</field>
-        <field name="model">student.profile</field>
+        <record id="group_teacher" model="res.groups">
+            <field name="name">Teacher</field>
+        </record>
+     <record id="teacher_profile_view_tree" model="ir.ui.view">
+            <field name="name">teacher.profile.tree</field>
+        <field name="model">teacher.profile</field>
         <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
-                    <field name="student_id"/>
-                    <field name="total_hours"/>
+                    <field name="department"/>
+                    <field name="course_ids"/>
                 </tree>
         </field>
         </record>
 
-    <record id="student_profile_view_form" model="ir.ui.view">
-            <field name="name">student.profile.form</field>
-        <field name="model">student.profile</field>
+    <record id="teacher_profile_view_form" model="ir.ui.view">
+            <field name="name">teacher.profile.form</field>
+        <field name="model">teacher.profile</field>
         <field name="arch" type="xml">
                 <form>
                     <group>
                         <field name="name"/>
-                        <field name="email"/>
-                        <field name="student_id"/>
-                        <field name="total_hours"/>
-                        <field name="gpa"/>
+                        <field name="teacherid"/>
+                        <field name="department"/>
                     </group>
                     <notebook>
-                        <page string="Course IDs">
+                        <page string="Courses">
                                 <tree editable="bottom">
                                     <field name="course_ids"/>
                                 </tree>
-
                         </page>
                     </notebook>
 
@@ -37,15 +37,17 @@
         </field>
         </record>
     </data>
-    <record id="student_profile_action" model="ir.actions.act_window">
-        <field name="name">Student profile</field>
-        <field name="res_model">student.profile</field>
+    <record id="teacher_profile_action" model="ir.actions.act_window">
+        <field name="name">Teacher profile</field>
+        <field name="res_model">teacher.profile</field>
+        <field name="view_mode">tree,form</field>
     </record>
 
+
     <menuitem
-            id="student_profile_item"
-            name="Student Profile"
-            parent="student_profile_menu"
-            action="student_profile_action"
+            id="teacher_profile_item"
+            name="Teacher Profile"
+            parent="teacher_profile_menu"
+            action="teacher_profile_action"
     />
 </odoo>

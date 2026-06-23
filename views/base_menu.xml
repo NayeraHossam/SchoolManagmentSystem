@@ -1,22 +1,42 @@
 <odoo>
+
     <menuitem
             id="school_system"
             name="School System"
+            groups="school_system.group_student,school_system.group_teacher"
+    />
+    <menuitem
+            id="student_dashboard_menu"
+            name="Student Dashboard"
+            parent="student_profile_menu"
+            sequence="1"
+            groups="school_system.group_student"
     />
     <menuitem
             id="student_profile_menu"
             name="Student Profile"
             parent="school_system"
+            groups="school_system.group_student"
     />
+
+    <menuitem
+            id="teacher_profile_menu"
+            name="Teacher Profile"
+            parent="school_system"
+            groups="school_system.group_teacher"
+            />
+
     <menuitem
             id="courses_menu"
             name="Courses"
             parent="school_system"
+            groups="school_system.group_teacher"
     />
     <menuitem
             id="course_registration_menu"
             name="Course Registration"
             parent="school_system"
+            groups="school_system.group_student"
     />
 
 </odoo>

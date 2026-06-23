@@ -10,6 +10,7 @@ class StudentGrades(models.Model):
 
     student_id = fields.Many2one(
         'student.profile',
+        ondelete='cascade',
         required=True
     )
     course_id = fields.Many2one(

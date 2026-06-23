@@ -47,12 +47,10 @@
     </record>
 
 
-    <menuitem id="student_dashboard_menu"
-              name="Student Dashboard"
-              sequence="1"/>
+
 
     <menuitem id="student_dashboard_item"
-              name="Dashboard"
+              name="Student Dashboard"
               parent="student_dashboard_menu"
               action="student_dashboard_action"/>
 

@@ -1,0 +1,25 @@
+<odoo>
+    <template id="role_selection_page" name="Role Selection">
+        <t t-call="website.layout">
+            <iframe>
+            <div class="container mt-5 text-center">
+                <h1>Choose Login Type</h1>
+
+                <div class="mt-4">
+                    <a href="/teacher"
+                       class="btn btn-primary btn-lg">
+                        Teacher
+                    </a>
+
+                    <a href="/student"
+                       class="btn btn-primary btn-lg ms-3">
+                        Student
+                    </a>
+                </div>
+
+            </div>
+            </iframe>
+
+        </t>
+    </template>
+</odoo>

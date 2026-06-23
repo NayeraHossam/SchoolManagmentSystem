@@ -5,14 +5,17 @@
     'category': 'Tools',
     'author': 'Nayera',
 
-    'depends': ['base'],
+    'depends': ['base','web','website'],
 
     'data': [
         'security/ir.model.access.csv',
         'views/base_menu.xml',
         'views/course_registration_menu.xml',
         'views/courses_menu.xml',
+        'views/role_selection.xml',
+        'views/student_dashboard_menu.xml',
         'views/student_profile_menu.xml',
+        'views/teacher_profile_menu.xml'
     ],
 
     'installable': True,

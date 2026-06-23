@@ -1,7 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_courses,access_courses,model_courses,,1,1,1,1
-access_course_registration,access_course_registration,model_course_registration,,1,1,1,1
+access_course_registration,access_course_registration,model_course_registration,school_system.group_student,1,1,1,1
 access_student_profile,access_student_profile,model_student_profile,,1,1,1,1
 access_teacher_profile,access_teacher_profile,model_teacher_profile,,1,1,1,1
 access_student_grades,access_student_grades,model_student_grades,,1,1,1,1
+
 

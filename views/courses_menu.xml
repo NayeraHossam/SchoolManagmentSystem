@@ -20,6 +20,7 @@
                     <group>
                         <field name="name"/>
                         <field name="course_id"/>
+                        <field name="teacher"/>
                         <field name="credit_hours"/>
                         <field name="time"/>
                     </group>
