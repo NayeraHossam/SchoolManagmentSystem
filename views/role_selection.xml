@@ -1,7 +1,6 @@
 <odoo>
     <template id="role_selection_page" name="Role Selection">
         <t t-call="website.layout">
-            <iframe>
             <div class="container mt-5 text-center">
                 <h1>Choose Login Type</h1>
 
@@ -18,7 +17,6 @@
                 </div>
 
             </div>
-            </iframe>
 
         </t>
     </template>

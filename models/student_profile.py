@@ -6,6 +6,7 @@ class StudentProfile(models.Model):
 
     name = fields.Char(string='Name')
     email = fields.Char(string='Email')
+    department = fields.Char(string='Department')
     student_id = fields.Char(string='Student ID',readonly=True)
     total_hours = fields.Float(compute='_compute_total_hours', store=True,string='Total Hours')
     gpa = fields.Float(compute='_compute_gpa',string='GPA')

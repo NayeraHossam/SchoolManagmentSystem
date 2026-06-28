@@ -26,6 +26,7 @@
                         <group>
                             <field name="name"/>
                             <field name="email"/>
+                            <field name="department"/>
                             <field name="student_id"/>
                             <field name="total_hours"/>
                             <field name="gpa"/>

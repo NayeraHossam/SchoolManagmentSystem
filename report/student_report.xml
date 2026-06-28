@@ -1,0 +1,136 @@
+<odoo>
+
+    <!-- Report Action -->
+    <record id="student_yearly_report" model="ir.actions.report">
+        <field name="name">Student Report</field>
+        <field name="model">student.profile</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">school_system.student_report</field>
+        <field name="report_file">school_system.student_report</field>
+        <field name="binding_model_id" ref="model_student_profile"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- Report Template -->
+    <template id="student_report">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+
+                <t t-foreach="docs" t-as="o">
+
+                    <div class="page">
+
+                        <!-- Header -->
+                        <div style="text-align:center; margin-bottom:25px;">
+                            <h2 style="color:#8fbc8f; margin-bottom:5px;">
+                                Student Academic Report
+                            </h2>
+                            <hr style="border:1px solid #8fbc8f;"/>
+                        </div>
+
+                        <!-- Student Information -->
+                        <h4 style="background:#8fbc8f; color:white; padding:6px;">
+                            Student Information
+                        </h4>
+
+                        <table class="table table-borderless" style="margin-bottom:25px;">
+                            <tr>
+                                <td width="25%"><strong>Name</strong></td>
+                                <td><span t-field="o.name"/></td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Student ID</strong></td>
+                                <td><span t-field="o.student_id"/></td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Department</strong></td>
+                                <td><span t-field="o.department"/></td>
+                            </tr>
+
+                        </table>
+
+                        <!-- Registered Courses -->
+                        <h4 style="background:#8fbc8f; color:white; padding:6px;">
+                            Registered Courses
+                        </h4>
+
+                        <table class="table table-bordered table-striped">
+                            <thead style="background:#8fbc8f; color:white;">
+                                <tr>
+                                    <th style="text-align:center;">#</th>
+                                    <th>Course Code</th>
+                                    <th>Course Name</th>
+                                    <th style="text-align:center;">Credit Hours</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <t t-set="count" t-value="1"/>
+
+                                <t t-foreach="o.course_ids" t-as="course">
+
+                                    <tr>
+                                        <td style="text-align:center;">
+                                            <span t-esc="count"/>
+                                        </td>
+
+                                        <td>
+                                            <span t-field="course.course_num"/>
+                                        </td>
+
+                                        <td>
+                                            <span t-field="course.course_id.name"/>
+                                        </td>
+
+                                        <td style="text-align:center;">
+                                            <span t-field="course.course_hour"/>
+                                        </td>
+                                    </tr>
+
+                                    <t t-set="count" t-value="count + 1"/>
+
+                                </t>
+
+                            </tbody>
+                        </table>
+
+                        <!-- Summary -->
+                        <div style="margin-top:20px;">
+
+                            <p>
+                                <strong>Total Registered Courses:</strong>
+                                <span t-esc="len(o.course_ids)"/>
+                            </p>
+
+                            <p>
+                                <strong>Total Credit Hours:</strong>
+                                <span t-field="o.total_hours"/>
+                            </p>
+
+                            <p>
+                                <strong>Current CGPA:</strong>
+                                <span t-field="o.gpa"/>
+                            </p>
+
+                        </div>
+
+                        <!-- Footer -->
+                        <div style="margin-top:60px;">
+                            <hr/>
+                            <p style="text-align:center; color:gray; font-size:12px;">
+                                Student Management System
+                            </p>
+                        </div>
+
+                    </div>
+
+                </t>
+
+            </t>
+        </t>
+    </template>
+
+</odoo>

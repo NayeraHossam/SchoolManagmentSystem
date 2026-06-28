@@ -15,7 +15,8 @@
         'views/role_selection.xml',
         'views/student_dashboard_menu.xml',
         'views/student_profile_menu.xml',
-        'views/teacher_profile_menu.xml'
+        'views/teacher_profile_menu.xml',
+        'report/student_report.xml'
     ],
 
     'installable': True,
