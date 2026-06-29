@@ -5,7 +5,7 @@
     'category': 'Tools',
     'author': 'Nayera',
 
-    'depends': ['base','web','website'],
+    'depends': ['base','web','website','mail'],
 
     'data': [
         'security/ir.model.access.csv',

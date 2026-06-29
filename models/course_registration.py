@@ -4,6 +4,7 @@ from odoo import models, fields, api
 class CourseRegistration(models.Model):
     _name = 'course.registration'
     _description = 'Course Registration'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
 
     course_num = fields.Char(related='course_id.course_id',string='Course ID')

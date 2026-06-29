@@ -17,13 +17,25 @@
         <field name="model">course.registration</field>
         <field name="arch" type="xml">
                 <form>
-                    <group>
-                        <field name="course_id"/>
-                        <field name="course_num"/>
-                        <field name="course_hour"/>
-                        <field name="student_id"/>
-                        <field name="studentid"/>
-                    </group>
+                    <sheet>
+                        <group>
+                            <field name="course_id"/>
+                            <field name="course_num"/>
+                            <field name="course_hour"/>
+                            <field name="student_id"/>
+                            <field name="studentid"/>
+                        </group>
+                        <group>
+                            <div class="oe_chatter">
+                                <field name="message_follower_ids"/>
+                                <field name="activity_ids"/>
+                                <field name="message_ids"/>
+                            </div>
+                        </group>
+
+
+                    </sheet>
+
                     
                 </form>
         </field>
